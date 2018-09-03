@@ -9,10 +9,13 @@ module.exports = {
     updateConversationsInterval : 10000,
 	  updateNotificationsInterval : 20000,
     head : {
-      title : 'Admin'
+      title : 'Admin',
+	    metaInfo: {
+		    base: { href: '/' }
+	    }
     }
   },
- 
+
 	srcDir : 'resources/spa/admin/',
 	generate : {
   	dir : 'static/spa/admin/'

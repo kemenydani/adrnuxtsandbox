@@ -7,7 +7,7 @@ use App\Lib\Responder;
 
 use Psr\Http\Message\ResponseInterface;
 
-class AdminResponder extends Responder
+class HomeResponder extends Responder
 {
     public function __invoke(Payload $payload)
     {
@@ -16,6 +16,6 @@ class AdminResponder extends Responder
 
     public function respond(Payload $payload) : ResponseInterface
     {
-        return $this->response->write(file_get_contents(__DIR__ . '/static/spa/admin/index.html'));
+        return $this->response->write(file_get_contents('static/spa/admin/index.html'));
     }
 }
