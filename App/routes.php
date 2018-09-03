@@ -1,6 +1,7 @@
 <?php
 
 $app->get('/', App\Entities\Home\Actions\HomeAction::class);
+$app->get('admin', App\Entities\Admin\Actions\AdminAction::class);
 
 $app->get('/api/auth', App\Entities\User\Actions\AuthAction::class);
 $app->post('/api/signin', App\Entities\User\Actions\SignInAction::class);
