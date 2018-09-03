@@ -10,15 +10,12 @@ module.exports = {
 	  updateNotificationsInterval : 20000,
     head : {
       title : 'Admin',
-	    metaInfo: {
-		    base: { href: '/' }
-	    }
     }
   },
 
 	srcDir : 'resources/spa/admin/',
+	buildDir : 'public/static/spa/admin',
 	generate : {
-  	dir : 'static/spa/admin/'
 	},
 	
   /*
@@ -48,6 +45,7 @@ module.exports = {
   
 	router: {
 		mode: 'hash',
+		base : 'public/static/spa/admin'
     /*
     extendRoutes(routes, resolve){
 		  routes.push({
@@ -110,7 +108,7 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
       if (ctx.isServer) {
         config.externals = [
@@ -119,6 +117,7 @@ module.exports = {
           })
         ]
       }
-    }
+	    //config.publicPath = '/dist/';
+    },
   }
 }
