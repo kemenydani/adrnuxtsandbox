@@ -4,3 +4,4 @@
 /package-lock.json
 /composer.lock
 /composer.phar
+/public/static/spa/admin/
