@@ -14,7 +14,7 @@ module.exports = {
   },
 
 	srcDir : 'resources/spa/admin/',
-	buildDir : 'public/static/spa/admin',
+	//buildDir : 'public/static/spa/admin',
 	generate : {
 	},
 	
@@ -119,5 +119,6 @@ module.exports = {
       }
 	    //config.publicPath = '/dist/';
     },
+	  publicPath : 'public/static/spa/admin/',
   }
 }
