@@ -42,6 +42,7 @@ module.exports = {
   
 	router: {
 		mode: 'hash',
+		base : '/',
     /*
     extendRoutes(routes, resolve){
 		  routes.push({
@@ -107,6 +108,9 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
+      }
+      if(!ctx.isDev){
+      
       }
       if (ctx.isServer) {
         config.externals = [
