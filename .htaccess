@@ -6,7 +6,7 @@ RewriteBase /public/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
 
-#Redirect /spa-admin-dist/ /public/static/spa-admin-generate/spa-admin-dist/
+Redirect /spa-admin-dist/ /public/static/spa-admin-generate/spa-admin-dist/
 
 php_value file_uploads On
 php_value memory_limit 100M

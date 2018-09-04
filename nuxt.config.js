@@ -14,7 +14,7 @@ module.exports = {
   },
 
 	srcDir : 'resources/spa-admin/',
-	buildDir : 'public/static/spa-admin-build',
+	buildDir : 'public/static/spa-admin-build/',
   /*
   ** Headers of the page
   */
@@ -42,7 +42,6 @@ module.exports = {
   
 	router: {
 		mode: 'hash',
-		base : '/',
     /*
     extendRoutes(routes, resolve){
 		  routes.push({
@@ -52,8 +51,6 @@ module.exports = {
     }
 */
 	},
-  
-	
 	
   transition: {
     name: 'fade',
@@ -108,9 +105,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         });
-      }
-      if(!ctx.isDev){
-      
       }
       if (ctx.isServer) {
         config.externals = [
