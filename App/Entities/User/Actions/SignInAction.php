@@ -3,9 +3,9 @@
 namespace App\Entities\User\Actions;
 
 use App\Lib\Session;
-use App\User\Repository\UserMapper;
-use App\User\Repository\UserRecord;
-use App\User\Responders\SignInResponder;
+use App\Entities\User\Repository\UserMapper;
+use App\Entities\User\Repository\UserRecord;
+use App\Entities\User\Responders\SignInResponder;
 
 use App\Lib\Action;
 use App\Lib\Payload;

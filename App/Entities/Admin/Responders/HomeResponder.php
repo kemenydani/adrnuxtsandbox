@@ -16,6 +16,7 @@ class HomeResponder extends Responder
 
     public function respond(Payload $payload) : ResponseInterface
     {
-        return $this->response->write(file_get_contents('static/spa/admin/dist/index.spa.html'));
+
+        return $this->response->write(file_get_contents('static/spa-admin-generate/index.html'));
     }
 }

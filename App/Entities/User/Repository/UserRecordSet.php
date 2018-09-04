@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User\Repository;
+namespace App\Entities\User\Repository;
 
 use App\Lib\RecordSet;
 

@@ -2,8 +2,8 @@
 
 namespace App\Entities\User\Actions;
 
-use App\User\Repository\UserMapper;
-use App\User\Responders\AuthResponder;
+use App\Entities\User\Repository\UserMapper;
+use App\Entities\User\Responders\AuthResponder;
 
 use App\Lib\Action;
 use App\Lib\Payload;
