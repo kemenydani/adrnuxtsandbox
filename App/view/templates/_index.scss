@@ -14,9 +14,11 @@ a {
   text-decoration: none;
 }
 
+html {
+  background: #f1f1f1;
+}
 body {
   margin: 0;
-  background: #f1f1f1;
   color: #00171f;
 }
 #pageHeader {
@@ -28,14 +30,22 @@ body {
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+  nav {
+    padding: 0 20px 0 20px;
+  }
+  nav a {
+    font-family: 'Oswald', sans-serif;
+    color: #00171f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0 20px 0 20px;
+  }
 }
 
-#pageHeader nav a {
-  font-family: 'Oswald', sans-serif;
-  color: #00171f;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  padding: 0 20px 0 20px;
+#pageTeaser {
+  min-height: 500px;
+  height: 500px;
+  background: #ffffff;
 }
 
 
