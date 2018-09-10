@@ -1,5 +1,7 @@
 <?php
 
+//https://fiberonofiber.wordpress.com/2014/02/13/slim-php-multi-language-urls/
+
 $app->get('/', App\Entities\Home\Actions\HomeAction::class);
 $app->get('/admin', App\Entities\Admin\Actions\HomeAction::class);
 
