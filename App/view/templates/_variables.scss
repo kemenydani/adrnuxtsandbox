@@ -1,0 +1,77 @@
+@import 'mixins';
+
+/* ---- colors */
+
+$black: #1d1d21;
+$gray-10: #2e2e31;
+$gray-6: #7b7a7d;
+$gray-4: #a5a5a6;
+$gray-3: #bbbbbc;
+$gray-2: #d1d0d2;
+$gray-1: #e8e7e8;
+$white: #ffffff;
+
+$color-light1 : #00a8e8;
+$color-color2 : #007ea7;
+$color-dark1  : #003459;
+$color-dark2  : #00171f;
+$color-text-heading : $color-dark1;
+
+$color-success: #88c459;
+$color-error: #f5414f;
+$color-warning: #ffd137;
+
+/* ---- text: set base values */
+$text-base-size: 1em;
+$text-scale-ratio: 1.2;
+
+@include breakpoint(tablet) {
+  $text-base-size: 1.25em;
+  $text-scale-ratio: 1.25;
+}
+
+/* ---- text: fonts */
+
+$font-heading : 'Oswald',  sans-serif;
+$font-read-primary : 'Slabo 27px', sans-serif;
+$font-read-secondary : 'Roboto',  sans-serif;
+$font-subtitle : 'Open Sans',  sans-serif;
+
+/* ---- text: line-height */
+$heading-line-height: 1.2;
+$body-line-height: 1.4;
+
+/* ---- text:  scale */
+$text-xs: 1em / ($text-scale-ratio * $text-scale-ratio);
+$text-sm: 1em / $text-scale-ratio;
+$text-md: 1em * $text-scale-ratio;
+$text-lg: 1em * $text-scale-ratio * $text-scale-ratio;
+$text-xl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$text-xxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$text-xxxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+
+/* ---- spacing  */
+$space-base: 1.25em;
+
+@include breakpoint(tablet) {
+  $space-base: 1.5em;
+}
+
+$space-xxs:  0.25 * $space-base;
+$space-xs:   0.5  * $space-base;
+$space-sm:   0.75 * $space-base;
+$space-md:   1.25 * $space-base;
+$space-lg:   2    * $space-base;
+$space-xl:   3.25 * $space-base;
+$space-xxl:  5.25 * $space-base;
+
+/* ---- fixed spacing - not affected by $space-base or $text-base-size */
+$space-base-fixed: 1.25rem;
+
+$space-xxs-fixed: 0.25 * $space-base-fixed;
+$space-xs-fixed:  0.5  * $space-base-fixed;
+$space-sm-fixed:  0.75 * $space-base-fixed;
+$space-md-fixed:  1.25 * $space-base-fixed;
+$space-lg-fixed:  2    * $space-base-fixed;
+$space-xl-fixed:  3.25 * $space-base-fixed;
+$space-xxl-fixed: 5.25 * $space-base-fixed;
