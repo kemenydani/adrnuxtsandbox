@@ -14,14 +14,12 @@ body {
   margin: 0;
   min-height: 100%;
   font-size: $text-base-size;
-  font-family: $font-read-secondary;
+  font-family: $font-article;
   color: $gray-10;
   line-height: $body-line-height;
 }
 
 p, .text { line-height: $body-line-height; }
-
-.long-text { font-family: $font-read-primary; }
 
 h6, .text-xs  { font-size: $text-xs; }
 h5, .text-sm  { font-size: $text-sm; }
@@ -69,7 +67,6 @@ h1, h2, h3, h4, form legend {
     border-radius: 100%;
   }
 }
-
 
 /* -------- HOLY GRAIL LAYOUT -------- */
 
