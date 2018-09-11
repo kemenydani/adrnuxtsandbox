@@ -1,3 +1,46 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -109,8 +152,8 @@ h1, h2, h3, h4, form legend {
   .icon svg {
     color: #00a8e8;
     fill: #00a8e8;
-    width: 56px !important;
-    height: 56px !important; }
+    width: 30px !important;
+    height: auto; }
   .icon.circle {
     border-radius: 100%; }
 
@@ -130,7 +173,7 @@ div#pageWrapper {
   div#pageWrapper #pageMain {
     flex: 1; }
     div#pageWrapper #pageMain .container {
-      padding: 20px; }
+      padding: 2.5em; }
   div#pageWrapper footer#pageBottom {
     max-height: 300px;
     height: 300px;
@@ -194,5 +237,24 @@ header#pageHeader {
   background: #ffffff;
   font-family: "Roboto", sans-serif;
   color: #003459; }
+
+.articles {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.25em;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.article {
+  max-width: calc(50% - 1.25em);
+  min-width: calc(50% - 1.25em);
+  border-top: 10px solid #00a8e8;
+  background: #fff;
+  margin-bottom: 2.5em; }
+  .article figure.image {
+    background-color: #7b7a7d;
+    height: 250px; }
+  .article .body {
+    padding: 1.25em; }
 
 /*# sourceMappingURL=index.css.map */

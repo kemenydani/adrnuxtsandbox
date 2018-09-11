@@ -25,6 +25,12 @@ $container['view'] = function ($c) {
     return $view;
 };
 
+$container['notFoundHandler'] = function ($c) {
+    return function ($request, $response) use ($c) {
+        return $c['response']->withRedirect(__LANGUAGE__ . '/home');
+    };
+};
+
 require 'routes.php';
 
 try
