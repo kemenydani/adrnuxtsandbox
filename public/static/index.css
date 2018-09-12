@@ -148,12 +148,13 @@ h1, h2, h3, h4, form legend {
   align-content: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: 20px; }
+  margin-left: 20px;
+  cursor: pointer; }
   .icon svg {
     color: #00a8e8;
     fill: #00a8e8;
-    width: 30px !important;
-    height: auto; }
+    width: 30px;
+    height: 30px; }
   .icon.circle {
     border-radius: 100%; }
 
@@ -206,7 +207,7 @@ header#pageHeader {
         height: 56px;
         line-height: 56px;
         font-size: 20px;
-        font-family: "Roboto", sans-serif;
+        font-family: "Oswald", sans-serif;
         color: #00A4FF;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale; }
@@ -217,7 +218,7 @@ header#pageHeader {
       height: 56px;
       line-height: 56px;
       padding: 0 20px 0 20px;
-      font-family: "Roboto", sans-serif;
+      font-family: "Oswald", sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       color: #00171f; }
