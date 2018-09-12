@@ -179,10 +179,6 @@ div#pageWrapper {
     height: 590px; }
   div#pageWrapper #pageMain {
     flex: 1; }
-  div#pageWrapper footer#pageBottom {
-    max-height: 300px;
-    height: 300px;
-    background: #2e2e31; }
 
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
@@ -217,7 +213,7 @@ header#pageHeader {
         -moz-osx-font-smoothing: grayscale; }
   header#pageHeader nav.navigation {
     display: flex;
-    padding: 0 20px 0 0; }
+    margin: 0 40px 0 40px; }
     header#pageHeader nav.navigation a {
       height: 56px;
       line-height: 56px;
@@ -236,6 +232,71 @@ header#pageHeader {
     display: flex;
     flex-direction: row-reverse;
     line-height: 90px; }
+
+footer#pageBottom {
+  padding-top: 1.5625em;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: #1d1d21;
+  justify-content: flex-end; }
+  footer#pageBottom .infoLine {
+    color: #a5a5a6;
+    padding-left: 1.5625em;
+    padding-right: 1.5625em;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    border-top: 1px solid #2e2e31; }
+    footer#pageBottom .infoLine .copyright {
+      display: flex;
+      align-items: center;
+      align-content: center; }
+      footer#pageBottom .infoLine .copyright .logo {
+        margin-right: 0.9375em; }
+  footer#pageBottom .tags {
+    text-align: center;
+    padding: 2.5em;
+    line-height: 33px; }
+  footer#pageBottom .siteMap {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px; }
+    footer#pageBottom .siteMap a.nav-item {
+      color: #ffffff;
+      padding: 0 40px 0 40px;
+      font-family: "Oswald", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-transform: uppercase; }
+    footer#pageBottom .siteMap a:hover {
+      color: #00a8e8; }
+    footer#pageBottom .siteMap a.active {
+      color: #00a8e8; }
+
+.icons {
+  display: flex; }
+
+.tag {
+  background: #2e2e31;
+  display: inline;
+  font-size: 0.8333333333em;
+  color: #a5a5a6;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  padding-top: 0.3125em;
+  padding-bottom: 0.3125em; }
+
+a.tag:hover {
+  color: #00a8e8; }
 
 /* ----- set page teaser below header  */
 #pageTeaser {
