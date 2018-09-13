@@ -53,7 +53,7 @@ $app->group('/{lang:(?:en|hu)}/', function() use ($routes) {
 
 })->add(function(Request $request, Response $response, $next) {
 
-    return $next( $request, $response );
+    return $response = $next( $request, $response );
 
 });
 
