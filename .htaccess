@@ -14,11 +14,13 @@ php_value upload_max_filesize 100M
 php_value max_file_upload 100
 php_value max_input_time 120
 
-# 2 weeks for image files
-<filesMatch ".(jpg|jpeg|png|gif|ico)$">
-Header set Cache-Control "max-age=1209600, public"
+
+# 4 weeks for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico|ttf)$">
+    Header set Cache-Control "max-age=2419200, public"
 </filesMatch>
-# 1 day for css and js
+
+# 4 weeks for css and js
 <filesMatch ".(css|js)$">
-Header set Cache-Control "max-age=86400, public"
+    Header set Cache-Control "max-age=2419200, public"
 </filesMatch>
