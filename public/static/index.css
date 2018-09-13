@@ -324,7 +324,6 @@ header#pageHeader {
 
 /* FOOTER */
 footer#pageBottom {
-  border: 1px solid red;
   padding-top: 1.5625em;
   display: flex;
   flex-direction: column;
