@@ -127,17 +127,12 @@ div#pageWrapper {
 
   > * { width: 100%; max-width: 100%; }
 
-  #pageTop {
-    max-height: 590px;
-    height: 590px;
-  }
+  #pageTop { max-height: 640px; }
 
   #pageMain {
-    display: none;
     flex: 1;
     .container {
 
-      border: 1px solid red;
 
     }
   }
@@ -244,11 +239,10 @@ header#pageHeader {
 
 /* ----- set page teaser below header  */
 #pageTeaser {
-  min-height: 500px;
-  height: 500px;
-  padding: 20px;
-  background: #ffffff;
 
+  height: 500px;
+
+  background: #ffffff;
   font-family: $font-heading;
   color: $color-dark1;
 }

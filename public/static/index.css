@@ -206,13 +206,9 @@ div#pageWrapper {
     width: 100%;
     max-width: 100%; }
   div#pageWrapper #pageTop {
-    max-height: 590px;
-    height: 590px; }
+    max-height: 640px; }
   div#pageWrapper #pageMain {
-    display: none;
     flex: 1; }
-    div#pageWrapper #pageMain .container {
-      border: 1px solid red; }
 
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
@@ -296,9 +292,7 @@ header#pageHeader {
 
 /* ----- set page teaser below header  */
 #pageTeaser {
-  min-height: 500px;
   height: 500px;
-  padding: 20px;
   background: #ffffff;
   font-family: "Roboto", sans-serif;
   color: #003459; }
