@@ -1,8 +1,8 @@
 <?php
 
-//https://fiberonofiber.wordpress.com/2014/02/13/slim-php-multi-language-urls/
+use Slim\Http\Request;
+use Slim\Http\Response;
 
-//s$app->redirect('/{lang:^((?!en|hu).)*$}', __LANGUAGE__);
 $httpLanguages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
 foreach($httpLanguages as &$entry) $entry = substr($entry, 0, 2);
@@ -11,8 +11,52 @@ $languages = array_intersect(array_unique($httpLanguages), __LANGUAGES__);
 
 $httpLanguage = @$languages[0] ? $languages[0] : __DEFAULT_LANGUAGE__;
 
-$app->get('/', App\Entities\Home\Actions\HomeAction::class);
-$app->get('/home', App\Entities\Home\Actions\HomeAction::class);
+$routes = [
+    'home' => [
+        'paths' => 'home|index|',
+        'methods' => 'GET',
+        'action' => App\Entities\Home\Actions\HomeAction::class
+    ],
+    'article.list' => [
+        'paths' => 'articles',
+        'methods' => 'GET',
+        'action' => App\Entities\Article\Actions\ListAction::class
+    ],
+    'article.view' => [
+        'paths' => 'article/{title}',
+        'methods' => 'GET',
+        'action' => App\Entities\Article\Actions\ViewAction::class
+    ],
+];
+
+/**
+ *  redirect non language prefixed routes with default language
+ */
+$app->group('/', function() use ($routes) {
+
+    foreach($routes as $route) $this->map(explode('|', $route['methods']), '{_:' . $route['paths'] . '}', $route['action']);
+
+})->add(function(Request $request, Response $response, $next) {
+
+    $path = $request->getUri()->getPath();
+
+    return $response->withRedirect(__DEFAULT_LANGUAGE__ . $path);
+});
+
+
+/**
+ *  language prefixed routes
+ */
+$app->group('/{lang:(?:en|hu)}/', function() use ($routes) {
+
+    foreach($routes as $route) $this->map(explode('|', $route['methods']), '{_:' . $route['paths'] . '}', $route['action']);
+
+})->add(function(Request $request, Response $response, $next) {
+
+    return $next( $request, $response );
+
+});
+
 
 $app->get('/admin', App\Entities\Admin\Actions\HomeAction::class);
 

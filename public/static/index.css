@@ -208,6 +208,7 @@ div#pageWrapper {
   div#pageWrapper #pageTop {
     max-height: 640px; }
   div#pageWrapper #pageMain {
+    min-height: 320px;
     flex: 1; }
 
 /* -------- MAJOR ELEMENTS -------- */

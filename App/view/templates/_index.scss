@@ -130,6 +130,7 @@ div#pageWrapper {
   #pageTop { max-height: 640px; }
 
   #pageMain {
+    min-height: 320px;
     flex: 1;
     .container {
 
