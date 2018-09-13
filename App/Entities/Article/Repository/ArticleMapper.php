@@ -2,6 +2,7 @@
 
 namespace App\Entities\Article\Repository;
 
+use App\Entities\Article\Repository\ArticleRecord;
 use App\Lib\DB;
 use App\Lib\RecordMapper;
 

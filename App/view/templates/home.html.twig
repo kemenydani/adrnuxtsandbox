@@ -9,11 +9,11 @@
   <meta name="description" content="Professional portfolio and blog with reference works, tutorials, articles and blog entries of the Author."/>
   <meta name="keywords" content="web development, web design, programming, tutorials, design, web graphics, portfolio, web developer, senior developer, full stack developer">
   <title>Home | Webdevplace</title>
-  
+
   <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="static/index.css?v=1">
-  
+
   <!-- Google Analytics -->
   <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-125097039-1"></script>
   <!-- Google Adsense -->
@@ -30,12 +30,12 @@
 	    enable_page_level_ads: true
     });
   </script>
-  
+
   <script type="text/javascript">
 		window.executeAsyncTasks = [];
 		window.executeAsync = function(cb){if(cb) executeAsyncTasks.push(cb);};
   </script>
-  
+
 </head>
 <body>
 
@@ -113,49 +113,25 @@
     </header>
     <div id="pageTeaser">
       <div class="container">
-      
+
       </div>
     </div>
   </div>
   <main id="pageMain">
     <div class="container articles">
-      <article class="article">
-        <figure class="image">
-        </figure>
-        <section class="body">
-          <h2>Lorem ipsum dolor sit amet</h2>
-          <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </article>
-      <article class="article">
-        <figure class="image">
-    
-        </figure>
-        <section class="body">
-          <h2>Lorem ipsum dolor sit amet</h2>
-          <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </article>
-      <article class="article">
-        <figure class="image">
-        </figure>
-        <section class="body">
-          <h2>Lorem ipsum dolor sit amet</h2>
-          <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </article>
-      <article class="article">
-        <figure class="image">
-    
-        </figure>
-        <section class="body">
-          <h2>Lorem ipsum dolor sit amet</h2>
-          <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </article>
+      {% for article in articles %}
+        <article class="article">
+          <figure class="image">
+          </figure>
+          <section class="body">
+            <h2><a href="">{{ article.Title }}</a></h2>
+            <p class="text-md">{{ article.Teaser }}</p>
+          </section>
+        </article>
+      {% endfor %}
     </div>
   </main>
-  
+
   <footer id="pageBottom">
     <nav id="footerNavigation container-fluid" class="siteMap">
       <a class="nav-item active" href="#">Home</a>
@@ -286,7 +262,7 @@
 
 <script type="application/javascript">
 	window.executeAsync(function(){
-		
+
 		window.App = new Vue({
           el: '#pageWrapper',
           data: function(){
@@ -305,7 +281,7 @@
               }
           }
         });
-		
+
 	});
 </script>
 

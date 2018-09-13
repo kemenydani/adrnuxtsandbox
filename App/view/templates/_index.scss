@@ -7,7 +7,7 @@
 /* -------- GLOBALS / UTILITY -------- */
 
 * { box-sizing: border-box; }
-a { text-decoration: none; }
+a { text-decoration: none; color: $color-light1; }
 html { background: $gray-1; height: 100%; position: relative; }
 
 body {
@@ -270,6 +270,18 @@ header#pageHeader {
 
   .body {
     padding: $space-base;
+    h2 {
+      color: $black;
+      font-family: $font-highlight;
+      font-weight: bold;
+      font-size: $text-xxxl;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    p {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
 }
 

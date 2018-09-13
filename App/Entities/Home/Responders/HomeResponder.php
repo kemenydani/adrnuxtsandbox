@@ -17,7 +17,7 @@ class HomeResponder extends Responder
     public function respond(Payload $payload) : ResponseInterface
     {
         return $this->view->render($this->response, 'home.html.twig', [
-            'foo' => 'bar'
+            'articles' => $payload->getResult()
         ]);
     }
 }

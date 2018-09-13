@@ -83,7 +83,8 @@ table {
   box-sizing: border-box; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #00a8e8; }
 
 html {
   background: #e8e7e8;
@@ -316,6 +317,16 @@ header#pageHeader {
     height: 250px; }
   .article .body {
     padding: 1.25em; }
+    .article .body h2 {
+      color: #1d1d21;
+      font-family: "Oswald", sans-serif;
+      font-weight: bold;
+      font-size: 2.48832em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+    .article .body p {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
 
 /* FOOTER */
 footer#pageBottom {
