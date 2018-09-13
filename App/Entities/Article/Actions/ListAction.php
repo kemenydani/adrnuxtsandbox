@@ -2,7 +2,7 @@
 
 namespace App\Entities\Article\Actions;
 
-use App\Article\Repository\ArticleMapper;
+use App\Entities\Article\Repository\ArticleMapper;
 use App\Article\Responders\ListResponder;
 
 use App\Lib\Action;

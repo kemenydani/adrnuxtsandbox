@@ -12,7 +12,7 @@
   
   <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="static/index.css">
+  <link rel="stylesheet" href="static/index.css?v=1">
   
   <!-- Google Analytics -->
   <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-125097039-1"></script>
@@ -54,7 +54,7 @@
           <div class="logoText">webdevplace</div>
         </a>
       </div>
-      <nav class="navigation">
+      <nav class="navigation" ref="sideNav" v-if="!sideNavOpen">
         <a class="nav-item active" title="Home page" href="/">HOME</a>
         <a class="nav-item" title="Article archive"  href="/en/articles">ARTICLES</a>
         <a class="nav-item" title="Reference works" href="/en/portfolio">PORTFOLIO</a>
@@ -155,14 +155,6 @@
       </article>
     </div>
   </main>
-  
-  <script type="application/javascript">
-		window.executeAsync(function(){
-			
-			console.log('executed async')
-			console.log(new Vue());
-		});
-  </script>
   
   <footer id="pageBottom">
     <nav id="footerNavigation container-fluid" class="siteMap">
@@ -290,7 +282,32 @@
   </footer>
 </div>
 
-<script type="text/javascript" src="public/static/js/vue.min.js"></script>
+<script type="text/javascript" src="static/js/vue.min.js?v=2.5.17"></script>
+
+<script type="application/javascript">
+	window.executeAsync(function(){
+		
+		window.App = new Vue({
+          el: '#pageWrapper',
+          data: function(){
+          	return {
+          		sideNavOpen : false
+            }
+          },
+          methods : {
+              toggleSideNav(){
+              	  this.sideNavOpen = !this.sideNavOpen;
+              }
+          },
+          watch : {
+	          sideNavOpen : function(bool) {
+	              this.$refs['sideNav'].style.maxWidth = bool ? '100%' : '0px';
+              }
+          }
+        });
+		
+	});
+</script>
 
 <script type="text/javascript">
 	(function(){

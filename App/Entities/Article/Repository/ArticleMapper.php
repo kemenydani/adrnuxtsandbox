@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Article\Repository;
+namespace App\Entities\Article\Repository;
 
 use App\Lib\DB;
 use App\Lib\RecordMapper;
