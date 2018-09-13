@@ -3,7 +3,7 @@
 namespace App\Entities\Article\Actions;
 
 use App\Entities\Article\Repository\ArticleMapper;
-use App\Article\Responders\ListResponder;
+use App\Entities\Article\Responders\ListResponder;
 
 use App\Lib\Action;
 use App\Lib\Payload;

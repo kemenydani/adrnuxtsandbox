@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Article\Responders;
+namespace App\Entities\Article\Responders;
 
 use App\Lib\Payload;
 use App\Lib\Responder;
