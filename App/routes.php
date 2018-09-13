@@ -3,14 +3,6 @@
 use Slim\Http\Request;
 use Slim\Http\Response;
 
-$httpLanguages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
-
-foreach($httpLanguages as &$entry) $entry = substr($entry, 0, 2);
-
-$languages = array_intersect(array_unique($httpLanguages), __LANGUAGES__);
-
-$httpLanguage = @$languages[0] ? $languages[0] : __DEFAULT_LANGUAGE__;
-
 $routes = [
     'home' => [
         'paths' => 'home|index|',
@@ -47,11 +39,15 @@ $app->group('/', function() use ($routes) {
 /**
  *  language prefixed routes
  */
-$app->group('/{lang:(?:en|hu)}/', function() use ($routes) {
+$app->group('/{lang:(?:en|hu|en/|hu/)}', function() use ($routes) {
 
     foreach($routes as $route) $this->map(explode('|', $route['methods']), '{_:' . $route['paths'] . '}', $route['action']);
 
 })->add(function(Request $request, Response $response, $next) {
+
+    $lang = $request->getAttribute('route')->getArgument('lang');
+
+    $request->withAttribute('lang', $lang);
 
     return $response = $next( $request, $response );
 
