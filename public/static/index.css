@@ -131,11 +131,19 @@ h1, h2, h3, h4, form legend {
 
 .container {
   width: 1100px;
+  max-width: 1100px;
+  min-width: 1100px;
   margin: 0 auto; }
+  @media only screen and (max-width: 1099px) {
+    .container {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%; } }
 
 .container-fluid {
   width: 100%;
-  min-width: 100%; }
+  min-width: 100%;
+  max-width: 1920px; }
 
 .icon {
   background: #00a8e8;
@@ -173,12 +181,16 @@ div#pageWrapper {
   flex-wrap: wrap;
   align-content: space-between; }
   div#pageWrapper > * {
-    width: 100%; }
+    width: 100%;
+    max-width: 100%; }
   div#pageWrapper #pageTop {
     max-height: 590px;
     height: 590px; }
   div#pageWrapper #pageMain {
+    display: none;
     flex: 1; }
+    div#pageWrapper #pageMain .container {
+      border: 1px solid red; }
 
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
@@ -190,7 +202,10 @@ header#pageHeader {
   display: flex;
   align-items: center;
   align-content: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  display: none; }
+  header#pageHeader > * {
+    overflow: hidden; }
   header#pageHeader .leftAside {
     flex: 1; }
     header#pageHeader .leftAside a.logo {
@@ -234,17 +249,20 @@ header#pageHeader {
     line-height: 90px; }
 
 footer#pageBottom {
+  border: 1px solid red;
   padding-top: 1.5625em;
-  max-height: 500px;
   display: flex;
   flex-direction: column;
   background: #1d1d21;
+  overflow: hidden;
   justify-content: flex-end; }
   footer#pageBottom .infoLine {
     color: #a5a5a6;
     padding-left: 1.5625em;
     padding-right: 1.5625em;
     height: 100px;
+    min-height: 100px;
+    max-height: 100px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -257,18 +275,22 @@ footer#pageBottom {
       footer#pageBottom .infoLine .copyright .logo {
         margin-right: 0.9375em; }
   footer#pageBottom .tags {
+    border: 1px solid green;
     text-align: center;
     padding: 2.5em;
-    line-height: 33px; }
+    line-height: 33px;
+    overflow: hidden; }
   footer#pageBottom .siteMap {
+    min-height: 100px;
     height: 100px;
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: center;
+    flex-wrap: wrap;
     text-align: center;
     margin-bottom: 40px; }
     footer#pageBottom .siteMap a.nav-item {
+      height: 50px;
       color: #ffffff;
       padding: 0 40px 0 40px;
       font-family: "Oswald", sans-serif;

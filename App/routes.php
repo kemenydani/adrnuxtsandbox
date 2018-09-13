@@ -11,39 +11,9 @@ $languages = array_intersect(array_unique($httpLanguages), __LANGUAGES__);
 
 $httpLanguage = @$languages[0] ? $languages[0] : __DEFAULT_LANGUAGE__;
 
+$app->get('/', App\Entities\Home\Actions\HomeAction::class);
+$app->get('/home', App\Entities\Home\Actions\HomeAction::class);
 
-$app->redirect('/', '/' . $httpLanguage);
-
-$app->group('/{lang:(?:en/|hu/|en|hu|)}', function() use ($httpLanguage)
-{
-    $this->get('', App\Entities\Home\Actions\HomeAction::class);
-    $this->get('home', App\Entities\Home\Actions\HomeAction::class);
-})->add(function($request, $response, $next) use (&$httpLanguage){
-/*
-    $path = $request->getUri()->getPath();
-
-    $exp = explode('/', $path);
-
-    $language = in_array($exp[1], __LANGUAGES__) $exp[1]
-
-    if(!in_array($exp[1], __LANGUAGES__))
-    {
-
-        return $response->withRedirect(__LANGUAGE__  . $path);
-    }
-
-    */
-
-    $response = $next( $request, $response );
-
-    return $response;
-});
-
-
-
-
-
-//$app->get('/', App\Entities\Home\Actions\HomeAction::class);
 $app->get('/admin', App\Entities\Admin\Actions\HomeAction::class);
 
 $app->get('/api/auth', App\Entities\User\Actions\AuthAction::class);

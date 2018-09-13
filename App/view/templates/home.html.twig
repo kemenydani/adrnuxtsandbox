@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="author" content="Daniel Kemeny">
@@ -10,22 +11,31 @@
   
   <link rel="shortcut icon" href="public/static/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="public/static/images/favicon.ico" type="image/x-icon">
-
   <link rel="stylesheet" href="public/static/index.css">
+  
+  <script type="application/javascript">
+	  window.executeAsyncData = [];
+	  window.executeAsync = function(cb){if(cb) executeAsyncData.push(cb);};
+  </script>
+  
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125097039-1"></script>
+  <!-- Google Adsense -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
+    /* Google Analytics */
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-125097039-1');
+
+    /* Google AdSense */
+    (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-5878779425822200",
+	    enable_page_level_ads: true
+    });
   </script>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-5878779425822200",
-			enable_page_level_ads: true
-		});
-  </script>
+  
 </head>
 <body>
 
@@ -148,17 +158,14 @@
   </main>
   
   <footer id="pageBottom">
-    <div class="container">
-    
-    </div>
-    <nav id="footerNavigation" class="siteMap">
+    <nav id="footerNavigation container-fluid" class="siteMap">
       <a class="nav-item active" href="#">Home</a>
       <a class="nav-item" href="#">Articles</a>
       <a class="nav-item" href="#">Portfolio</a>
       <a class="nav-item" href="#">About</a>
       <a class="nav-item" href="#">Contact</a>
     </nav>
-    <div class="tags">
+    <div class="tags container-fluid">
       <a class="tag" title="Javascript" target="_self" href="#">Javascript</a>
       <a class="tag" title="HTML" target="_self" href="#">HTML</a>
       <a class="tag" title="CSS" target="_self" href="#">CSS</a>
@@ -221,9 +228,9 @@
       <a class="tag" title="GIS" target="_self" href="#">GIS</a>
       <a class="tag" title="Web Mapping" target="_self" href="#">Web Mapping</a>
     </div>
-    <div class="infoLine">
+    <div class="infoLine container-fluid">
       <div class="copyright">
-        <a class="logo" href="/" target="_self" title="Webdevplace Logo">
+        <a class="logo copyrightLogo" href="/" target="_self" title="Webdevplace Logo">
           <svg aria-labelledby="websiteLogoTitle websiteLogoDesc" role="img" height="56" width="66" class="logoImage">
             <title id="websiteLogoTitle">Webdevplace Logo</title>
             <desc id="websiteLogoDesc">The logo of webdevplace.com</desc>
@@ -232,7 +239,7 @@
             <polygon fill="#00a8e8" points="26 5.3 26 44.3 20 41 20 8.5 14 11.8 14 37.8 8 34.5 8 15 2 18.3 2 37.8 32 54 32 2"></polygon>
           </svg>
         </a>
-        Copyright © 2018-2019 All Rights Reserved
+        <span class="copyrightText">Copyright © 2018-2019 All Rights Reserved</span>
       </div>
       <div class="icons footerIcons">
         <a class="icon circle icon-linkedin" href="https://www.linkedin.com/in/d%C3%A1niel-kem%C3%A9ny-ba1003142/" target="_blank" title="LinkedIn Profile">
@@ -276,6 +283,26 @@
   </footer>
   
 </div>
+
+<script>
+	/* usage */
+	executeAsync(function(){
+		// script to execute
+		console.log('executed async')
+	});
+</script>
+
+<script type="application/javascript">
+	(function(){
+		if (window.executeAsyncData) {
+			(function(){
+				window.executeAsyncData.forEach(function(cb){
+					if(cb)cb();
+				});
+			})();
+		}
+	})();
+</script>
 
 </body>
 </html>
