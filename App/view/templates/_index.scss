@@ -56,6 +56,32 @@ h1, h2, h3, h4, form legend {
   max-width: 1920px;
 }
 
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  > *:first-child {
+    margin-left: 0;
+  }
+}
+
+.tag {
+  white-space: nowrap;
+  background: $gray-10;
+  display: inline;
+  font-size: $text-sm;
+  color: $gray-4;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-left: $space-sm;
+  padding-right: $space-sm;
+  padding-top: $space-xs / 2;
+  padding-bottom: $space-xs / 2;
+}
+
+a.tag:hover {
+  color: $color-light1;
+}
+
 .icon {
   background: $color-light1;
   width: 56px;
@@ -123,35 +149,32 @@ div#pageWrapper {
 /* ----- set header */
 header#pageHeader {
   background: $black;
-  height: 140px;
-  padding-left: 20px;
-  padding-right: 20px;
+  min-height: 140px;
+  padding-left: $space-md;
+  padding-right: $space-md;
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  //border-top: 5px solid $gray-3;
-display: none;
-  > * {
-    overflow: hidden;
-  }
-
+  width: 100%;
   .leftAside
   {
     flex: 1;
-    a.logo {
+    a.logo
+    {
+      height: 56px;
+      position: relative;
       display: flex;
       align-items: center;
       align-content: center;
-      height: 56px;
-      position: relative;
-
-      svg.logoImage {
+      svg.logoImage
+      {
         width: 66px;
         height: 56px;
         margin-right: 5px;
       }
-      div.logoText {
+      div.logoText
+      {
         height: 56px;
         line-height: 56px;
         font-size: 20px;
@@ -163,125 +186,60 @@ display: none;
     }
   }
 
-  nav.navigation {
+  nav.navigation
+  {
     display: flex;
-    margin: 0 40px 0 40px;
-    a {
+    margin: 0 $space-lg 0 $space-lg;
+
+    @include breakpoint('desktop-wide', 'max')
+    {
+      min-width: 40%;
+      position: fixed;
+      display: block;
+      z-index: 10;
+      left: 0;
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      top: 0;
+      bottom: 0;
+      background: $black;
+      a.nav-item
+      {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    @include breakpoint('desktop', 'max') { min-width: 50%; }
+    @include breakpoint('tablet', 'max') { min-width: 70%; }
+    @include breakpoint('phablet', 'max') { min-width: 90%; }
+    @include breakpoint('phone', 'max') { min-width: 100%; }
+
+    a.nav-item
+    {
       height: 56px;
+      padding: 0 $space-lg 0 $space-lg;
+
       line-height: 56px;
-      padding: 0 40px 0 40px;
+      font-size: $text-lg;
       font-family: $font-highlight;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       color: $white;
 
-      font-size: $text-lg;
-    }
-    a:hover {
-      color: $color-light1;
-    }
-    a.active {
-      color: $color-light1;
-     // border-bottom: 5px solid $color-light1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      &:hover, &.active { color: $color-light1; }
     }
   }
 
-  div.rightAside {
+  div.rightAside
+  {
     flex: 1;
     display: flex;
     flex-direction: row-reverse;
     line-height: 90px;
   }
-}
-
-footer#pageBottom
-{
-  border: 1px solid red;
-  padding-top: $space-md;
-  display: flex;
-  flex-direction: column;
-  background: $black;
-  overflow: hidden;
-  justify-content: flex-end;
-
-  .infoLine{
-    color: $gray-4;
-    padding-left: $space-md;
-    padding-right: $space-md;
-    height: 100px;
-    min-height: 100px;
-    max-height: 100px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    border-top: 1px solid $gray-10;
-    .copyright {
-      display: flex;
-      align-items: center;
-      align-content: center;
-      .logo {
-        margin-right: $space-sm;
-      }
-    }
-  }
-
-  .tags {
-    border: 1px solid green;
-    text-align: center;
-    padding: $space-lg;
-    line-height: 33px;
-    overflow: hidden;
-  }
-
-  .siteMap {
-    min-height: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    text-align: center;
-    margin-bottom: 40px;
-    a.nav-item {
-      height: 50px;
-      color: $white;
-      padding: 0 40px 0 40px;
-      font-family: $font-highlight;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-transform: uppercase;
-
-
-    }
-    a:hover {
-      color: $color-light1;
-    }
-    a.active {
-      color: $color-light1;
-    }
-  }
-}
-
-.icons {
-  display: flex;
-}
-
-.tag {
-  background: $gray-10;
-  display: inline;
-  font-size: $text-sm;
-  color: $gray-4;
-  margin-left: 2px;
-  margin-right: 2px;
-  padding-left: $space-sm;
-  padding-right: $space-sm;
-  padding-top: $space-xs / 2;
-  padding-bottom: $space-xs / 2;
-}
-
-a.tag:hover {
-  color: $color-light1;
 }
 
 /* ----- set page teaser below header  */
@@ -320,4 +278,100 @@ a.tag:hover {
   }
 }
 
+/* FOOTER */
+footer#pageBottom
+{
+  border: 1px solid red;
+  padding-top: $space-md;
+  display: flex;
+  flex-direction: column;
+  background: $black;
+  overflow: hidden;
+  justify-content: flex-end;
+  .brand
+  {
+    min-height: 100px;
+    padding: $space-md;
+    border-top: 1px solid $gray-10;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    color: $gray-4;
+    .copyright
+    {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      .logo
+      {
+        margin-right: $space-sm;
+      }
+    }
+  }
+  .tags
+  {
+    text-align: center;
+    padding: $space-lg;
+    line-height: 33px;
+    overflow: hidden;
+  }
+  .siteMap
+  {
+    min-height: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 40px;
+    a.nav-item
+    {
+      height: 50px;
+      color: $white;
+      padding: 0 40px 0 40px;
+      font-family: $font-highlight;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-transform: uppercase;
+    }
+    a:hover
+    {
+      color: $color-light1;
+    }
+    a.active
+    {
+      color: $color-light1;
+    }
+  }
 
+  @include breakpoint('phablet', 'max') {
+    .icons
+    {
+      width: 100%;
+      justify-content: space-between;
+      > .icon
+      {
+        margin: $space-xs;
+      }
+    }
+    .copyright
+    {
+      margin-left: $space-xs;
+      margin-right: $space-xs;
+      align-self: flex-start;
+    }
+  }
+
+  @include breakpoint('tablet-wide', 'max') {
+    .brand
+    {
+      flex-direction: column-reverse;
+      padding: 0;
+      > * {
+        padding: $space-md;
+      }
+    }
+  }
+}

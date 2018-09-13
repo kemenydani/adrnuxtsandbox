@@ -13,27 +13,26 @@
   <link rel="icon" href="public/static/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="public/static/index.css">
   
-  <script type="application/javascript">
-	  window.executeAsyncData = [];
-	  window.executeAsync = function(cb){if(cb) executeAsyncData.push(cb);};
-  </script>
-  
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125097039-1"></script>
+  <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-125097039-1"></script>
   <!-- Google Adsense -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
+  <script async type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script type="text/javascript">
     /* Google Analytics */
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-125097039-1');
-
     /* Google AdSense */
     (adsbygoogle = window.adsbygoogle || []).push({
 	    google_ad_client: "ca-pub-5878779425822200",
 	    enable_page_level_ads: true
     });
+  </script>
+  
+  <script type="text/javascript">
+		window.executeAsyncTasks = [];
+		window.executeAsync = function(cb){if(cb) executeAsyncTasks.push(cb);};
   </script>
   
 </head>
@@ -157,6 +156,14 @@
     </div>
   </main>
   
+  <script type="application/javascript">
+		window.executeAsync(function(){
+			
+			console.log('executed async')
+			console.log(new Vue());
+		});
+  </script>
+  
   <footer id="pageBottom">
     <nav id="footerNavigation container-fluid" class="siteMap">
       <a class="nav-item active" href="#">Home</a>
@@ -228,7 +235,7 @@
       <a class="tag" title="GIS" target="_self" href="#">GIS</a>
       <a class="tag" title="Web Mapping" target="_self" href="#">Web Mapping</a>
     </div>
-    <div class="infoLine container-fluid">
+    <div class="brand container-fluid">
       <div class="copyright">
         <a class="logo copyrightLogo" href="/" target="_self" title="Webdevplace Logo">
           <svg aria-labelledby="websiteLogoTitle websiteLogoDesc" role="img" height="56" width="66" class="logoImage">
@@ -281,22 +288,15 @@
       </div>
     </div>
   </footer>
-  
 </div>
 
-<script>
-	/* usage */
-	executeAsync(function(){
-		// script to execute
-		console.log('executed async')
-	});
-</script>
+<script type="text/javascript" src="public/static/js/vue.min.js"></script>
 
 <script type="application/javascript">
 	(function(){
-		if (window.executeAsyncData) {
+		if (window.executeAsyncTasks) {
 			(function(){
-				window.executeAsyncData.forEach(function(cb){
+				window.executeAsyncTasks.forEach(function(cb){
 					if(cb)cb();
 				});
 			})();
