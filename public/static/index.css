@@ -178,7 +178,6 @@ a.tag:hover {
   align-content: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: 20px;
   cursor: pointer; }
   .icon svg {
     color: #1d1d21;
@@ -195,6 +194,9 @@ a.tag:hover {
   .icon.circle {
     border-radius: 100%; }
 
+.icons .icon {
+  margin-left: 20px; }
+
 /* -------- HOLY GRAIL LAYOUT -------- */
 div#pageWrapper {
   position: relative;
@@ -207,14 +209,16 @@ div#pageWrapper {
     width: 100%;
     max-width: 100%; }
   div#pageWrapper #pageTop {
-    max-height: 640px; }
+    max-height: 680px; }
   div#pageWrapper #pageMain {
+    padding-top: 60px;
     min-height: 320px;
     flex: 1; }
 
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
 header#pageHeader {
+  border-top: 10px solid #00a8e8;
   background: #1d1d21;
   min-height: 140px;
   padding-left: 1.5625em;
@@ -294,10 +298,49 @@ header#pageHeader {
 
 /* ----- set page teaser below header  */
 #pageTeaser {
-  height: 500px;
-  background: #ffffff;
+  height: 540px;
+  background: #1D1D21;
   font-family: "Roboto", sans-serif;
-  color: #003459; }
+  text-align: center; }
+  #pageTeaser h1 {
+    color: #00a8e8;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    text-transform: uppercase; }
+  #pageTeaser .services {
+    display: flex;
+    justify-content: space-between;
+    min-height: 140px; }
+    #pageTeaser .services .service {
+      min-height: 140px;
+      color: #a5a5a6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      width: 22%; }
+      #pageTeaser .services .service .icon {
+        margin: 1.5625em;
+        background: #ffffff; }
+      #pageTeaser .services .service h2 a {
+        color: #ffffff;
+        font-family: "Oswald", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+      #pageTeaser .services .service p {
+        font-family: "Roboto Light", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    #pageTeaser .services .service-design .icon {
+      background: #88c459; }
+    #pageTeaser .services .service-programming .icon {
+      background: #00a8e8; }
+    #pageTeaser .services .service-tutorials .icon {
+      background: #f5414f; }
+    #pageTeaser .services .service-news .icon {
+      background: #ffd137; }
 
 .articles {
   display: flex;
@@ -309,7 +352,6 @@ header#pageHeader {
 .article {
   max-width: calc(50% - 1.25em);
   min-width: calc(50% - 1.25em);
-  border-top: 10px solid #00a8e8;
   background: #fff;
   margin-bottom: 2.5em; }
   .article figure.image {
@@ -327,6 +369,12 @@ header#pageHeader {
     .article .body p {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
+
+.tags {
+  text-align: center;
+  padding: 2.5em;
+  line-height: 33px;
+  overflow: hidden; }
 
 /* FOOTER */
 footer#pageBottom {
@@ -351,11 +399,6 @@ footer#pageBottom {
       align-content: center; }
       footer#pageBottom .brand .copyright .logo {
         margin-right: 0.9375em; }
-  footer#pageBottom .tags {
-    text-align: center;
-    padding: 2.5em;
-    line-height: 33px;
-    overflow: hidden; }
   footer#pageBottom .siteMap {
     min-height: 100px;
     height: 100px;
