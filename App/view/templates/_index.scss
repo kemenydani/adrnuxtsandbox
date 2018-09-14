@@ -58,6 +58,7 @@ h1, h2, h3, h4, form legend {
 .icons {
   display: flex;
   flex-wrap: wrap;
+
   > *:first-child {
     margin-left: 0;
   }
@@ -86,6 +87,7 @@ a.tag:hover {
   width: 56px;
   height: 56px;
   position: relative;
+  margin: $space-sm;
   display: flex;
   align-items: center;
   align-content: center;
@@ -112,11 +114,11 @@ a.tag:hover {
     border-radius: 100%;
   }
 }
-
+/*
 .icons .icon {
   margin-left: 20px;
 }
-
+*/
 /* -------- HOLY GRAIL LAYOUT -------- */
 
 div#pageWrapper {

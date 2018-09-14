@@ -173,6 +173,7 @@ a.tag:hover {
   width: 56px;
   height: 56px;
   position: relative;
+  margin: 0.9375em;
   display: flex;
   align-items: center;
   align-content: center;
@@ -194,9 +195,11 @@ a.tag:hover {
   .icon.circle {
     border-radius: 100%; }
 
+/*
 .icons .icon {
-  margin-left: 20px; }
-
+  margin-left: 20px;
+}
+*/
 /* -------- HOLY GRAIL LAYOUT -------- */
 div#pageWrapper {
   position: relative;
