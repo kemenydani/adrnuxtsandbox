@@ -6,11 +6,11 @@ class DB extends \PDO
 {
     public static $_instance;
 
-    private static $_PREFIX_ = '';
-    private static $_HOST_ = 'sql168.main-hosting.eu';
-    private static $_DATABASE_ = 'u277298753_wdp';
-    private static  $_USERNAME_ = 'u277298753_wdp';
-    private static  $_PASSWORD_ = 'webdevplace2018';
+    public static $_PREFIX_ = '';
+    public static $_HOST_ = 'sql168.main-hosting.eu';
+    public static $_DATABASE_ = 'u277298753_wdp';
+    public static  $_USERNAME_ = 'u277298753_wdp';
+    public static  $_PASSWORD_ = 'webdevplace2018';
 
     public $stmt = null;
     public $fetchMode = null;

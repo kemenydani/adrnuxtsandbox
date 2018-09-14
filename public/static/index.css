@@ -131,9 +131,9 @@ h1, h2, h3, h4, form legend {
   line-height: 1.2; }
 
 .container {
-  width: 1100px;
-  max-width: 1100px;
-  min-width: 1100px;
+  width: 1160px;
+  max-width: 1160px;
+  min-width: 1160px;
   margin: 0 auto; }
   @media only screen and (max-width: 1099px) {
     .container {
@@ -212,14 +212,33 @@ div#pageWrapper {
     width: 100%;
     max-width: 100%; }
   div#pageWrapper #pageTop {
-    max-height: 780px;
+    max-height: 840px;
+    background-color: #1d1d21;
     background-position: center center; }
-    div#pageWrapper #pageTop .icon {
-      box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
   div#pageWrapper #pageMain {
-    padding-top: 60px;
     min-height: 320px;
     flex: 1; }
+
+#pageReferences {
+  display: flex;
+  display: none;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 10px solid #00a8e8;
+  background: #1d1d21;
+  padding: 0.9375em; }
+  #pageReferences article.reference {
+    max-width: 22%;
+    height: 360px;
+    text-align: center;
+    background: #00a8e8;
+    margin: 0.625em;
+    min-width: 22%;
+    padding: 1.5625em; }
+    #pageReferences article.reference h2 {
+      font-family: "Oswald", sans-serif;
+      color: #ffffff; }
 
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
@@ -254,8 +273,7 @@ header#pageHeader {
         -moz-osx-font-smoothing: grayscale; }
   header#pageHeader nav.navigation {
     display: flex;
-    margin: 0 2.5em 0 2.5em;
-    text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
+    margin: 0 2.5em 0 2.5em; }
     @media only screen and (max-width: 1439px) {
       header#pageHeader nav.navigation {
         min-width: 40%;
@@ -303,7 +321,7 @@ header#pageHeader {
 
 /* ----- set page teaser below header  */
 #pageTeaser {
-  height: 640px;
+  height: 700px;
   position: relative;
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -312,12 +330,19 @@ header#pageHeader {
   justify-content: space-between; }
   #pageTeaser .tag {
     background: black; }
-  #pageTeaser h1 {
-    color: #ffffff;
+  #pageTeaser .container-teaser h1 {
+    color: #d1d0d2;
     font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    padding-top: 140px;
-    text-transform: uppercase; }
+    font-size: 2.48832em;
+    padding-top: 120px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  #pageTeaser .container-teaser p {
+    color: #00a8e8;
+    font-family: "Roboto Light", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
   #pageTeaser .services {
     display: flex;
     justify-content: space-between;
@@ -337,13 +362,15 @@ header#pageHeader {
         font-family: "Oswald", sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
+        font-size: 1.44em; }
       #pageTeaser .services .service p {
         color: #e8e7e8;
         font-family: "Roboto Light", sans-serif;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.5); }
+        -moz-osx-font-smoothing: grayscale; }
+      #pageTeaser .services .service a.cta {
+        font-family: "Roboto Light", sans-serif;
+        font-size: 1.2em; }
     #pageTeaser .services .service-design .icon {
       background: #88c459; }
     #pageTeaser .services .service-programming .icon {
@@ -352,13 +379,13 @@ header#pageHeader {
       background: #f5414f; }
     #pageTeaser .services .service-news .icon {
       background: #ffd137; }
-    #pageTeaser .services .service-design a {
+    #pageTeaser .services .service-design h2 a, #pageTeaser .services .service-design a {
       color: #88c459; }
-    #pageTeaser .services .service-programming a {
+    #pageTeaser .services .service-programming h2 a, #pageTeaser .services .service-programming a {
       color: #00a8e8; }
-    #pageTeaser .services .service-tutorials a {
+    #pageTeaser .services .service-tutorials h2 a, #pageTeaser .services .service-tutorials a {
       color: #f5414f; }
-    #pageTeaser .services .service-news a {
+    #pageTeaser .services .service-news h2 a, #pageTeaser .services .service-news a {
       color: #ffd137; }
 
 .articles {

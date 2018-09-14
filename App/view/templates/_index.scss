@@ -37,9 +37,9 @@ h1, h2, h3, h4, form legend {
 }
 
 .container {
-  width: 1100px;
-  max-width: 1100px;
-  min-width: 1100px;
+  width: 1160px;
+  max-width: 1160px;
+  min-width: 1160px;
   margin: 0 auto;
 
   @include breakpoint('desktop-small', 'max') {
@@ -132,15 +132,16 @@ div#pageWrapper {
   > * { width: 100%; max-width: 100%; }
 
   #pageTop {
-    max-height: 780px;
+    max-height: 840px;
+    background-color: #1d1d21;
     background-position: center center;
     .icon {
-      box-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
+
     }
   }
 
   #pageMain {
-    padding-top: 60px;
+
     min-height: 320px;
     flex: 1;
     .container {
@@ -150,6 +151,31 @@ div#pageWrapper {
   }
 
 }
+
+#pageReferences {
+  display: flex;
+  display: none;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-top: 10px solid $color-light1;
+  background: #1d1d21;
+  padding: $space-sm;
+  article.reference {
+    max-width: 22%;
+    height: 360px;
+    text-align: center;
+    background: $color-light1;
+    margin: $space-xs;
+    min-width: 22%;
+    padding: $space-md;
+    h2 {
+      font-family: $font-highlight;
+      color: $white;
+    }
+  }
+}
+
 
 /* -------- MAJOR ELEMENTS -------- */
 
@@ -199,7 +225,7 @@ header#pageHeader {
   {
     display: flex;
     margin: 0 $space-lg 0 $space-lg;
-    text-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
+
     @include breakpoint('desktop-wide', 'max')
     {
       min-width: 40%;
@@ -254,7 +280,7 @@ header#pageHeader {
 /* ----- set page teaser below header  */
 #pageTeaser {
 
-  height: 640px;
+  height: 700px;
 
   position: relative;
   //background: #1D1D21;
@@ -269,12 +295,27 @@ header#pageHeader {
     background: black;
   }
 
-  h1 {
-    color: $white;
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    padding-top: 140px;
-    text-transform: uppercase;
+  .container-teaser {
+
+    h1 {
+      color: $gray-2;
+      font-family: 'Oswald', sans-serif;
+      font-size: $text-xxxl;
+      //font-weight: bold;
+      padding-top: 120px;
+      text-transform: uppercase;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    p {
+      color: $color-light1;
+      font-family: $font-subtitle;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+
   }
 
   .services {
@@ -298,14 +339,18 @@ header#pageHeader {
         font-family: $font-highlight;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        text-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
+        font-size: $text-lg;
       }
       p {
         color: $gray-1;
         font-family: $font-subtitle;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+
+      }
+      a.cta {
+        font-family: $font-subtitle;
+        font-size: $text-md;
       }
     }
     .service-design .icon {
@@ -321,16 +366,16 @@ header#pageHeader {
       background: #ffd137;
     }
 
-    .service-design a {
+    .service-design h2 a, .service-design a {
       color: #88c459;
     }
-    .service-programming a {
+    .service-programming h2 a, .service-programming a{
       color: #00a8e8;
     }
-    .service-tutorials a {
+    .service-tutorials h2 a, .service-tutorials a {
       color: #f5414f;
     }
-    .service-news a {
+    .service-news h2 a, .service-news a {
       color: #ffd137;
     }
 

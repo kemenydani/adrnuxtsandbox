@@ -126,6 +126,10 @@ function print_array($array, $die = true){
     if( $die ) die();
 }
 
+function isLocalhost($whitelist = ['127.0.0.1', '::1']) {
+    return in_array($_SERVER['REMOTE_ADDR'], $whitelist);
+}
+
 function array_reverse_recursive($arr) {
     foreach ($arr as $key => $val) {
         if (is_array($val))
