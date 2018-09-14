@@ -131,7 +131,13 @@ div#pageWrapper {
 
   > * { width: 100%; max-width: 100%; }
 
-  #pageTop { max-height: 680px; }
+  #pageTop {
+    max-height: 780px;
+    background-position: center center;
+    .icon {
+      box-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
+    }
+  }
 
   #pageMain {
     padding-top: 60px;
@@ -149,8 +155,8 @@ div#pageWrapper {
 
 /* ----- set header */
 header#pageHeader {
-  border-top: 10px solid $color-light1;
-  background: $black;
+ // border-top: 10px solid $color-light1;
+  //background: $black;
   min-height: 140px;
   padding-left: $space-md;
   padding-right: $space-md;
@@ -159,6 +165,7 @@ header#pageHeader {
   align-content: center;
   justify-content: space-between;
   width: 100%;
+
   .leftAside
   {
     flex: 1;
@@ -192,7 +199,7 @@ header#pageHeader {
   {
     display: flex;
     margin: 0 $space-lg 0 $space-lg;
-
+    text-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
     @include breakpoint('desktop-wide', 'max')
     {
       min-width: 40%;
@@ -247,18 +254,26 @@ header#pageHeader {
 /* ----- set page teaser below header  */
 #pageTeaser {
 
-  height: 540px;
+  height: 640px;
 
-  background: #1D1D21;
+  position: relative;
+  //background: #1D1D21;
   font-family: $font-heading;
   text-align: center;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .tag {
+    background: black;
+  }
+
   h1 {
-    color: $color-light1;
+    color: $white;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding-top: 140px;
     text-transform: uppercase;
   }
 
@@ -279,15 +294,18 @@ header#pageHeader {
         background: $white;
       }
       h2 a {
-        color: $white;
+       // color: $white;
         font-family: $font-highlight;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        text-shadow: -2px -2px 2px rgba(255,255,255,.1), 2px 2px 2px rgba(0,0,0,.5);
       }
       p {
+        color: $gray-1;
         font-family: $font-subtitle;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
       }
     }
     .service-design .icon {
@@ -301,6 +319,19 @@ header#pageHeader {
     }
     .service-news .icon {
       background: #ffd137;
+    }
+
+    .service-design a {
+      color: #88c459;
+    }
+    .service-programming a {
+      color: #00a8e8;
+    }
+    .service-tutorials a {
+      color: #f5414f;
+    }
+    .service-news a {
+      color: #ffd137;
     }
 
   }

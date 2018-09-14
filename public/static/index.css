@@ -212,7 +212,10 @@ div#pageWrapper {
     width: 100%;
     max-width: 100%; }
   div#pageWrapper #pageTop {
-    max-height: 680px; }
+    max-height: 780px;
+    background-position: center center; }
+    div#pageWrapper #pageTop .icon {
+      box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
   div#pageWrapper #pageMain {
     padding-top: 60px;
     min-height: 320px;
@@ -221,8 +224,6 @@ div#pageWrapper {
 /* -------- MAJOR ELEMENTS -------- */
 /* ----- set header */
 header#pageHeader {
-  border-top: 10px solid #00a8e8;
-  background: #1d1d21;
   min-height: 140px;
   padding-left: 1.5625em;
   padding-right: 1.5625em;
@@ -253,7 +254,8 @@ header#pageHeader {
         -moz-osx-font-smoothing: grayscale; }
   header#pageHeader nav.navigation {
     display: flex;
-    margin: 0 2.5em 0 2.5em; }
+    margin: 0 2.5em 0 2.5em;
+    text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
     @media only screen and (max-width: 1439px) {
       header#pageHeader nav.navigation {
         min-width: 40%;
@@ -301,16 +303,20 @@ header#pageHeader {
 
 /* ----- set page teaser below header  */
 #pageTeaser {
-  height: 540px;
-  background: #1D1D21;
+  height: 640px;
+  position: relative;
   font-family: "Roboto", sans-serif;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  #pageTeaser .tag {
+    background: black; }
   #pageTeaser h1 {
-    color: #00a8e8;
+    color: #ffffff;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding-top: 140px;
     text-transform: uppercase; }
   #pageTeaser .services {
     display: flex;
@@ -328,14 +334,16 @@ header#pageHeader {
         margin: 1.5625em;
         background: #ffffff; }
       #pageTeaser .services .service h2 a {
-        color: #ffffff;
         font-family: "Oswald", sans-serif;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; }
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: -2px -2px 2px rgba(255, 255, 255, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.5); }
       #pageTeaser .services .service p {
+        color: #e8e7e8;
         font-family: "Roboto Light", sans-serif;
         -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale; }
+        -moz-osx-font-smoothing: grayscale;
+        text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.5); }
     #pageTeaser .services .service-design .icon {
       background: #88c459; }
     #pageTeaser .services .service-programming .icon {
@@ -344,6 +352,14 @@ header#pageHeader {
       background: #f5414f; }
     #pageTeaser .services .service-news .icon {
       background: #ffd137; }
+    #pageTeaser .services .service-design a {
+      color: #88c459; }
+    #pageTeaser .services .service-programming a {
+      color: #00a8e8; }
+    #pageTeaser .services .service-tutorials a {
+      color: #f5414f; }
+    #pageTeaser .services .service-news a {
+      color: #ffd137; }
 
 .articles {
   display: flex;
