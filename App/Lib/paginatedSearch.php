@@ -11,6 +11,7 @@ class paginatedSearch
     private $total = 0;
     private $descending = true;
     private $order = null;
+    private $pages = 0;
 
     /**
     * @var RecordMapper
@@ -24,9 +25,33 @@ class paginatedSearch
         $this->repository = $repository;
     }
 
-    public function getSearchResult()
+    /**
+     * @return bool
+     */
+    public function isDescending(): bool
     {
-        return $this->repository->newRecordSet($this->getResult());
+      return $this->descending;
+    }
+
+    public function execute()
+    {
+        $this->repository->searchPaginated($this);
+    }
+
+    /**
+     * @return int
+     */
+    public function getPages(): int
+    {
+      return $this->pages;
+    }
+
+    /**
+     * @param int $pages
+     */
+    public function setPages($pages)
+    {
+      if($pages) $this->pages = (int)$pages;
     }
 
     public function getResult(): array

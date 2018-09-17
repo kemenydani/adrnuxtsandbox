@@ -4,6 +4,7 @@ namespace App\Entities\Article\Repository;
 
 use App\Entities\Article\Repository\ArticleRecord;
 use App\Lib\DB;
+use App\Lib\paginatedSearch;
 use App\Lib\RecordMapper;
 
 class ArticleMapper extends RecordMapper
@@ -11,7 +12,7 @@ class ArticleMapper extends RecordMapper
     /**
      * @var DB
      */
-    private $db;
+    public $db;
     private $table = 'article';
     private $id = 'Id';
 
@@ -29,6 +30,37 @@ class ArticleMapper extends RecordMapper
 STMT;
 
         return $this->newRecordSet( $this->db->getRows($stmt) );
+    }
+
+    public function searchPaginated(paginatedSearch $paginatedSearch)
+    {
+
+      $rowsPerPage = $paginatedSearch->getLimit();
+      $page = $paginatedSearch->getPage();
+      $descending = $paginatedSearch->isDescending();
+      $direction = $descending === true ? "DESC" : "ASC";
+
+      $order = @strlen($paginatedSearch->getOrder()) ? " ORDER BY " . $paginatedSearch->getOrder() . " " .  $direction : "";
+
+      $start = ( $page - 1 ) * $rowsPerPage;
+      $limit = " LIMIT $start, $rowsPerPage ";
+
+      $stmt = <<<STMT
+            SELECT SQL_CALC_FOUND_ROWS * FROM `article` $order $limit
+STMT;
+
+      $totalItems = $this->db->totalRowCount();
+      $totalPages = @ceil($totalItems / $rowsPerPage);
+
+      $paginatedSearch->setResult($this->db->getRows($stmt));
+      $paginatedSearch->setPage((int)$page);
+      $paginatedSearch->setLimit((int)$rowsPerPage);
+      $paginatedSearch->setTotal((int)$this->db->totalRowCount());
+      $paginatedSearch->setPages((int)$totalPages);
+      $paginatedSearch->setOrder($paginatedSearch->getOrder());
+      $paginatedSearch->setDescending($descending);
+
+      return $paginatedSearch;
     }
 
     public function paginate($search = '', $page, $rowsPerPage, $sortBy, $descending)
