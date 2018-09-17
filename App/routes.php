@@ -32,7 +32,7 @@ $app->group('/', function() use ($routes) {
 
     $path = $request->getUri()->getPath();
 
-    return $response->withRedirect(__DEFAULT_LANGUAGE__ . $path);
+    return $response->withRedirect(\App\Lib\Language::$default . $path);
 });
 
 
@@ -63,7 +63,7 @@ $app->group('/api', function()
 {
     $this->post('/signout', App\Entities\User\Actions\SignOutAction::class);
 
-    $this->get('/articles', App\Entities\Article\Actions\ListAction::class);
+    $this->get('/articles', App\Entities\Article\Actions\ApiListAction::class);
 
     $this->get('/user/notifications', App\Entities\User\Actions\NotificationAction::class);
     $this->get('/user/conversations', App\Entities\User\Actions\ConversationAction::class);

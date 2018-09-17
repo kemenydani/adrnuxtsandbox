@@ -7,7 +7,7 @@ use App\Lib\Responder;
 
 use Psr\Http\Message\ResponseInterface;
 
-class ListResponder extends Responder
+class ApiListResponder extends Responder
 {
     public function __invoke(Payload $payload)
     {
@@ -16,9 +16,7 @@ class ListResponder extends Responder
 
     public function respond(Payload $payload) : ResponseInterface
     {
-        return $this->view->render($this->response, 'articles.html.twig', [
-            'articles' => $payload->getResult()
-        ]);
+        return $this->response->withJson($payload->getResult());
     }
 
 }
