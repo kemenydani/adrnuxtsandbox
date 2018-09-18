@@ -2,7 +2,7 @@
 
 namespace App\Lib;
 
-class paginatedSearch
+class paginatedRepositorySearch
 {
     private $keyword = null;
     private $limit = 10;

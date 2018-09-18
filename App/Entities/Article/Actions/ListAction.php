@@ -7,7 +7,7 @@ use App\Entities\Article\Repository\ArticleRecordSet;
 use App\Entities\Article\Responders\ListResponder;
 
 use App\Lib\Action;
-use App\Lib\paginatedSearch;
+use App\Lib\paginatedRepositorySearch;
 use App\Lib\Payload;
 use Psr\Http\Message\ResponseInterface;
 
@@ -25,7 +25,7 @@ class ListAction extends Action
 
     public function __invoke(Request $request, Response $response, array $args = []) : ResponseInterface
     {
-        $ps = new paginatedSearch($this->repository);
+        $ps = new paginatedRepositorySearch($this->repository);
 
         $ps->setKeyword($request->getQueryParam('keyword'));
         $ps->setLimit($request->getQueryParam('limit'));

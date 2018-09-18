@@ -4,8 +4,9 @@ namespace App\Entities\Article\Repository;
 
 use App\Entities\Article\Repository\ArticleRecord;
 use App\Lib\DB;
-use App\Lib\paginatedSearch;
+use App\Lib\paginatedRepositorySearch;
 use App\Lib\RecordMapper;
+
 
 class ArticleMapper extends RecordMapper
 {
@@ -15,12 +16,14 @@ class ArticleMapper extends RecordMapper
     public $db;
     private $table = 'article';
     private $id = 'Id';
+    private $searchService = null;
 
     const PAGINATION_PER_PAGE = 5;
 
     public function __construct()
     {
         $this->db = DB::instance();
+        $this->searchService = new paginatedRepositorySearch($this);
     }
 
     public function all()
@@ -32,7 +35,7 @@ STMT;
         return $this->newRecordSet( $this->db->getRows($stmt) );
     }
 
-    public function searchPaginated(paginatedSearch $paginatedSearch)
+    public function searchPaginated(paginatedRepositorySearch $paginatedSearch)
     {
 
       $rowsPerPage = $paginatedSearch->getLimit();
