@@ -19,6 +19,11 @@ $routes = [
         'methods' => 'GET',
         'action' => App\Entities\Article\Actions\ViewAction::class
     ],
+    'portfolio.list' => [
+        'paths' => 'portfolio',
+        'methods' => 'GET',
+        'action' => App\Entities\Portfolio\Actions\ListAction::class
+    ],
 ];
 
 /**
